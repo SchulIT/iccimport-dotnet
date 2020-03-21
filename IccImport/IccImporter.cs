@@ -38,6 +38,7 @@ namespace SchulIT.IccImport
         public const string InfotextsUrl = "infotexts";
         public const string AbsencesUrl = "absences";
         public const string PrivacyCategoryUrl = "privacy/categories";
+        public const string RoomUrl = "rooms";
 
         private readonly ILogger<IccImporter> logger;
 
@@ -189,6 +190,11 @@ namespace SchulIT.IccImport
         public Task<IResponse> ImportPrivacyCategoriesAsync(List<PrivacyCategoryData> categories)
         {
             return ImportAsync(new PrivacyCategoriesData { Categories = categories }, PrivacyCategoryUrl);
+        }
+
+        public Task<IResponse> ImportRoomsAsync(List<RoomData> rooms)
+        {
+            return ImportAsync(new RoomsData { Rooms = rooms }, RoomUrl);
         }
     }
 }

@@ -46,5 +46,7 @@ namespace SchulIT.IccImport
         Task<IResponse> ImportAbsencesAsync(List<AbsenceData> absences);
 
         Task<IResponse> ImportPrivacyCategoriesAsync(List<PrivacyCategoryData> categories);
+
+        Task<IResponse> ImportRoomsAsync(List<RoomData> rooms);
     }
 }
