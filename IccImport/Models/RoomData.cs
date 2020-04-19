@@ -11,6 +11,6 @@ namespace SchulIT.IccImport.Models
         public string LongName { get; set; }
 
         [JsonProperty("capacity")]
-        public int Capacity { get; set; }
+        public int? Capacity { get; set; }
     }
 }
