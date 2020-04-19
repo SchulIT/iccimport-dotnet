@@ -162,9 +162,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new SubstitutionsData { Substitutions = substitutions }, SubstitutionsUrl);
         }
 
-        public Task<IResponse> ImportSupervisionsAsync(List<TimetableSupervisionData> supervisions)
+        public Task<IResponse> ImportSupervisionsAsync(string period, List<TimetableSupervisionData> supervisions)
         {
-            return ImportAsync(new TimetableSupervisionsData { Supervisions = supervisions }, TimetableSupervisionsUrl);
+            return ImportAsync(new TimetableSupervisionsData { Period = period, Supervisions = supervisions }, TimetableSupervisionsUrl);
         }
 
         public Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers)
@@ -172,9 +172,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new TeachersData { Teachers = teachers }, TeachersUrl);
         }
 
-        public Task<IResponse> ImportTimetableLessonsAsync(List<TimetableLessonData> lessons)
+        public Task<IResponse> ImportTimetableLessonsAsync(string period, List<TimetableLessonData> lessons)
         {
-            return ImportAsync(new TimetableLessonsData { Lessons = lessons }, TimetableLessonsUrl);
+            return ImportAsync(new TimetableLessonsData { Period = period, Lessons = lessons }, TimetableLessonsUrl);
         }
 
         public Task<IResponse> ImportTimetablePeriodsAsync(List<TimetablePeriodData> periods)

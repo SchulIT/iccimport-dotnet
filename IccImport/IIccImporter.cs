@@ -33,11 +33,11 @@ namespace SchulIT.IccImport
 
         Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers);
 
-        Task<IResponse> ImportTimetableLessonsAsync(List<TimetableLessonData> lessons);
+        Task<IResponse> ImportTimetableLessonsAsync(string period, List<TimetableLessonData> lessons);
 
         Task<IResponse> ImportTimetablePeriodsAsync(List<TimetablePeriodData> periods);
 
-        Task<IResponse> ImportSupervisionsAsync(List<TimetableSupervisionData> supervisions);
+        Task<IResponse> ImportSupervisionsAsync(string period, List<TimetableSupervisionData> supervisions);
 
         Task<IResponse> ImportTuitionsAsync(List<TuitionData> tuitions);
 
