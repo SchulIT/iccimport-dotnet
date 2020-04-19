@@ -10,7 +10,7 @@ namespace SchulIT.IccImport.Models
         public string Objective { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'study_group', 'teacher'
+        /// Gets or sets possible values include: 'study_group', 'teacher', 'room'
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
