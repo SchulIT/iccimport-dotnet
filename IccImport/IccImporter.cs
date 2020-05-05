@@ -73,7 +73,7 @@ namespace SchulIT.IccImport
                 logger.LogDebug($"Endpoint Base-URL is: {client.BaseAddress.ToString()}");
 
                 var json = JsonConvert.SerializeObject(request);
-                var content = new StringContent(json, Encoding.UTF8);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var response = await client.PostAsync(url, content);
                 var responseContent = await response.Content.ReadAsStringAsync();
