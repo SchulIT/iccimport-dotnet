@@ -47,10 +47,10 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// Gets or sets acronyms of the teachers (their acronyms) which
-        /// invigilate the exam.
+        /// supervise the exam.
         /// </summary>
-        [JsonProperty(PropertyName = "invigilators")]
-        public IList<string> Invigilators { get; set; }
+        [JsonProperty(PropertyName = "supervisions")]
+        public IList<string> Supervisions { get; set; }
 
         /// <summary>
         /// Gets or sets list of rooms, in which the exam takes place.
