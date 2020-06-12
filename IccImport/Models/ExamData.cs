@@ -43,7 +43,7 @@ namespace SchulIT.IccImport.Models
         /// Gets or sets list of external student IDs which attend this exam.
         /// </summary>
         [JsonProperty(PropertyName = "students")]
-        public IList<int?> Students { get; set; }
+        public IList<string> Students { get; set; }
 
         /// <summary>
         /// Gets or sets acronyms of the teachers (their acronyms) which
