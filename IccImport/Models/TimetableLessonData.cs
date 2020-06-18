@@ -1,6 +1,7 @@
 namespace SchulIT.IccImport.Models
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     public class TimetableLessonData
     {
@@ -38,5 +39,15 @@ namespace SchulIT.IccImport.Models
         /// </summary>
         [JsonProperty(PropertyName = "room")]
         public string Room { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty("teachers")]
+        public List<string> Teachers { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty("subject")]
+        public string Subject { get; set; }
     }
 }
