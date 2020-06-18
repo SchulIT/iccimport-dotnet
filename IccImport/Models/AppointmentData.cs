@@ -60,6 +60,11 @@ namespace SchulIT.IccImport.Models
         [JsonProperty(PropertyName = "study_groups")]
         public IList<string> StudyGroups { get; set; }
 
+        /// <summary
+        /// </summary>
+        [JsonProperty("mark_students_absent")]
+        public bool MarkStudentsAbsent { get; set; } = true;
+
         /// <summary>
         /// Gets or sets list of teachers (their acronyms) which attend this
         /// appointment.
