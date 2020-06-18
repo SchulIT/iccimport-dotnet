@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace SchulIT.IccImport.Response
 {
@@ -12,5 +13,14 @@ namespace SchulIT.IccImport.Response
 
         [JsonProperty("removed_count")]
         public int RemovedCount { get; set; }
+
+        [JsonProperty("ignored")]
+        public List<object> IgnoredEntities { get; set; }
+
+        public ImportResponse(int responseCode, string responseBody)
+            : base(responseCode, responseBody)
+        {
+
+        }
     }
 }

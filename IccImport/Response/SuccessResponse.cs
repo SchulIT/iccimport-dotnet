@@ -1,6 +1,11 @@
 ﻿namespace SchulIT.IccImport.Response
 {
-    public class SuccessReponse : IResponse
+    public class SuccessReponse : ResponseBase
     {
+        public SuccessReponse(int responseCode, string responseBody)
+            : base(responseCode, responseBody)
+        {
+
+        }
     }
 }

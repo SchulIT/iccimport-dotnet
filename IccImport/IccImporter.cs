@@ -82,13 +82,15 @@ namespace SchulIT.IccImport
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        var importResponse = JsonConvert.DeserializeObject<ImportResponse>(responseContent);
-                        logger.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed");
+                        var importResponse = new ImportResponse((int)response.StatusCode, responseContent);
+                        JsonConvert.PopulateObject(responseContent, importResponse);
+                        logger.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed, {importResponse.IgnoredEntities} entities ignored.");
                         return importResponse;
                     }
                     else
                     {
-                        var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(responseContent);
+                        var errorResponse = new ErrorResponse((int)response.StatusCode, responseContent);
+                        JsonConvert.PopulateObject(responseContent, errorResponse);
                         logger.LogError($"Request was not succesful: {errorResponse.Message}");
                         return errorResponse;
                     }
