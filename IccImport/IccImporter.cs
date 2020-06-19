@@ -84,7 +84,7 @@ namespace SchulIT.IccImport
                     {
                         var importResponse = new ImportResponse((int)response.StatusCode, responseContent);
                         JsonConvert.PopulateObject(responseContent, importResponse);
-                        logger.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed, {importResponse.IgnoredEntities} entities ignored.");
+                        logger.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed, {importResponse.IgnoredEntities.Count} entities ignored.");
                         return importResponse;
                     }
                     else
