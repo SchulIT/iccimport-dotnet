@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SchulIT.IccImport</id>
-    <version>1.0.0-preview9</version>
+    <version>1.0.0-preview10</version>
     <title>SchulIT.IccImport</title>
     <authors>Marcel Marnitz</authors>
     <license type="file">LICENSE.md</license>
