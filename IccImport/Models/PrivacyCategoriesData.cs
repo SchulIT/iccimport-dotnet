@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SchulIT.IccImport.Models
 {
-    class PrivacyCategoriesData
+    internal class PrivacyCategoriesData
     {
         [JsonProperty("categories")]
         public IList<PrivacyCategoryData> Categories { get; set; }

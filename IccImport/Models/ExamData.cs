@@ -37,25 +37,25 @@ namespace SchulIT.IccImport.Models
         /// exam.
         /// </summary>
         [JsonProperty(PropertyName = "tuitions")]
-        public IList<string> Tuitions { get; set; }
+        public IList<string> Tuitions { get; set; } = new List<string>();
 
         /// <summary>
         /// Gets or sets list of external student IDs which attend this exam.
         /// </summary>
         [JsonProperty(PropertyName = "students")]
-        public IList<string> Students { get; set; }
+        public IList<string> Students { get; set; } = new List<string>();
 
         /// <summary>
         /// Gets or sets acronyms of the teachers (their acronyms) which
         /// supervise the exam.
         /// </summary>
         [JsonProperty(PropertyName = "supervisions")]
-        public IList<string> Supervisions { get; set; }
+        public IList<string> Supervisions { get; set; } = new List<string>();
 
         /// <summary>
         /// Gets or sets list of rooms, in which the exam takes place.
         /// </summary>
         [JsonProperty(PropertyName = "rooms")]
-        public IList<string> Rooms { get; set; }
+        public IList<string> Rooms { get; set; } = new List<string>();
     }
 }

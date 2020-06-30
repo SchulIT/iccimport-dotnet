@@ -48,12 +48,12 @@ namespace SchulIT.IccImport.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "teachers")]
-        public IList<string> Teachers { get; set; }
+        public IList<string> Teachers { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "replacement_teachers")]
-        public IList<string> ReplacementTeachers { get; set; }
+        public IList<string> ReplacementTeachers { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
@@ -73,11 +73,11 @@ namespace SchulIT.IccImport.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "study_groups")]
-        public IList<string> StudyGroups { get; set; }
+        public IList<string> StudyGroups { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "replacement_study_groups")]
-        public IList<string> ReplacementStudyGroups { get; set; }
+        public IList<string> ReplacementStudyGroups { get; set; } = new List<string>();
     }
 }

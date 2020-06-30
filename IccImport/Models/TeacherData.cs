@@ -46,13 +46,13 @@ namespace SchulIT.IccImport.Models
         /// teacher teaches.
         /// </summary>
         [JsonProperty("subjects")]
-        public IList<string> Subjects { get; set; }
+        public IList<string> Subjects { get; set; } = new List<string>();
 
         /// <summary>
         /// Gets or sets list of external IDs of tags which are added to the
         /// user.
         /// </summary>
         [JsonProperty(PropertyName = "tags")]
-        public IList<string> Tags { get; set; }
+        public IList<string> Tags { get; set; } = new List<string>();
     }
 }

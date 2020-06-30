@@ -49,6 +49,6 @@ namespace SchulIT.IccImport.Models
         /// <summary>
         /// </summary>
         [JsonProperty("approved_privacy_categories")]
-        public IList<string> ApprovedPrivacyCategories { get; set; }
+        public IList<string> ApprovedPrivacyCategories { get; set; } = new List<string>();
     }
 }
