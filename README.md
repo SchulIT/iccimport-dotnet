@@ -3,7 +3,7 @@
 [![Build Status](https://dev.azure.com/schulit/IccImport/_apis/build/status/SchulIT.iccimport-dotnet?branchName=master)](https://dev.azure.com/schulit/IccImport/_build/latest?definitionId=6&branchName=master)
 [![NuGet version (SchulIT.IccImport)](https://img.shields.io/nuget/v/SchulIT.IccImport.svg?style=flat-square)](https://www.nuget.org/packages/SchulIT.IccImport/)
 ![GitHub](https://img.shields.io/github/license/schulit/iccimport-dotnet?style=flat-square)
-![.NET Core 3.1](https://img.shields.io/badge/.NET%20Standard-2.0-brightgreen?style=flat-square)
+![.NET Standard 2.1](https://img.shields.io/badge/.NET%20Standard-2.1-brightgreen?style=flat-square)
 
 Diese Bibliothek stellt alle Klassen zur Verfügung, um
 Daten in das [ICC](https://github.com/schulit/icc) mittels .NET Core hochzuladen.
