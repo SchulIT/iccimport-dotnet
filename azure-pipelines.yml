@@ -50,7 +50,7 @@ steps:
   displayName: Release to GitHub
   inputs:
     gitHubConnection: 'GitHub.com'
-    repositoryName: schulit/iccimport-net
+    repositoryName: schulit/iccimport-dotnet
     assets: |
       '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
       'IccImport/**/*.dll'
