@@ -39,6 +39,7 @@ namespace SchulIT.IccImport
         public const string AbsencesUrl = "absences";
         public const string PrivacyCategoryUrl = "privacy/categories";
         public const string RoomUrl = "rooms";
+        public const string FreeLessonTimespanUrl = "free_lessons";
 
         private readonly ILogger<IccImporter> logger;
 
@@ -197,6 +198,11 @@ namespace SchulIT.IccImport
         public Task<IResponse> ImportRoomsAsync(List<RoomData> rooms)
         {
             return ImportAsync(new RoomsData { Rooms = rooms }, RoomUrl);
+        }
+
+        public Task<IResponse> ImportFreeLessonTimespansAsync(List<FreeLessonTimespanData> timespans)
+        {
+            return ImportAsync(new FreeLessonTimespansData { FreeLessons = timespans }, FreeLessonTimespanUrl);
         }
     }
 }
