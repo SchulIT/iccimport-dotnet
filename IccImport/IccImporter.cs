@@ -167,7 +167,7 @@ namespace SchulIT.IccImport
 
         public Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions, bool suppressNotifications)
         {
-            return ImportAsync(new SubstitutionsData { Substitutions = substitutions, SuppressNotifications }, SubstitutionsUrl);
+            return ImportAsync(new SubstitutionsData { Substitutions = substitutions, SuppressNotifications = suppressNotifications }, SubstitutionsUrl);
         }
 
         public Task<IResponse> ImportSupervisionsAsync(string period, List<TimetableSupervisionData> supervisions)
