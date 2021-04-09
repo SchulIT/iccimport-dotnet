@@ -5,6 +5,9 @@ namespace SchulIT.IccImport.Models
 
     internal class SubstitutionsData
     {
+        [JsonProperty(PropertyName = "suppress_notifications")]
+        public bool SuppressNotifications { get; set; } = false;
+
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "substitutions")]

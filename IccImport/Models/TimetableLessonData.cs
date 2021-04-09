@@ -12,11 +12,6 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "tuition")]
-        public string Tuition { get; set; }
-
-        /// <summary>
-        /// </summary>
         [JsonProperty(PropertyName = "week")]
         public string Week { get; set; }
 

@@ -57,27 +57,27 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "room")]
-        public string Room { get; set; }
+        [JsonProperty(PropertyName = "rooms")]
+        public IList<string> Rooms { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "replacement_room")]
-        public string ReplacementRoom { get; set; }
+        [JsonProperty(PropertyName = "replacement_rooms")]
+        public IList<string> ReplacementRooms { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "remark")]
-        public string Remark { get; set; }
+        [JsonProperty(PropertyName = "text")]
+        public string Text { get; set; }
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "study_groups")]
-        public IList<string> StudyGroups { get; set; } = new List<string>();
+        [JsonProperty(PropertyName = "grades")]
+        public IList<string> Grades { get; set; } = new List<string>();
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "replacement_study_groups")]
-        public IList<string> ReplacementStudyGroups { get; set; } = new List<string>();
+        [JsonProperty(PropertyName = "replacement_grades")]
+        public IList<string> ReplacementGrades { get; set; } = new List<string>();
     }
 }

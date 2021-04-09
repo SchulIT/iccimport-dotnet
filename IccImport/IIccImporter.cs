@@ -15,7 +15,7 @@ namespace SchulIT.IccImport
 
         Task<IResponse> ImportAppointmentCategoriesAsync(List<AppointmentCategoryData> categories);
 
-        Task<IResponse> ImportExamsAsync(List<ExamData> exams);
+        Task<IResponse> ImportExamsAsync(List<ExamData> exams, bool suppressNotifications = false);
 
         Task<IResponse> ImportGradesAsync(List<GradeData> grades);
 
@@ -29,7 +29,7 @@ namespace SchulIT.IccImport
 
         Task<IResponse> ImportSubjectsAsync(List<SubjectData> subjects);
 
-        Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions);
+        Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions, bool suppressNotifications = false);
 
         Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers);
 

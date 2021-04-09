@@ -1,6 +1,7 @@
 namespace SchulIT.IccImport.Models
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
 
     public class StudentData
@@ -38,8 +39,8 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "is_full_aged")]
-        public bool? IsFullAged { get; set; }
+        [JsonProperty(PropertyName = "birthday")]
+        public DateTime Birthday { get; set; }
 
         /// <summary>
         /// </summary>

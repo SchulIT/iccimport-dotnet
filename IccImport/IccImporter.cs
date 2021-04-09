@@ -43,6 +43,11 @@ namespace SchulIT.IccImport
 
         private readonly ILogger<IccImporter> logger;
 
+        public IccImporter()
+        {
+
+        }
+
         public IccImporter(ILogger<IccImporter> logger)
         {
             this.logger = logger;
@@ -63,7 +68,7 @@ namespace SchulIT.IccImport
         {
             using (var client = new HttpClient())
             {
-                logger.LogDebug($"Start request with base url {BaseUrl} and url {url}");
+                logger?.LogDebug($"Start request with base url {BaseUrl} and url {url}");
 
                 var urlBuilder = new StringBuilder();
                 client.BaseAddress = new Uri(BuildUrl(url));
@@ -71,7 +76,7 @@ namespace SchulIT.IccImport
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Add("X-Token", Token);
 
-                logger.LogDebug($"Endpoint Base-URL is: {client.BaseAddress.ToString()}");
+                logger?.LogDebug($"Endpoint Base-URL is: {client.BaseAddress.ToString()}");
 
                 var json = JsonConvert.SerializeObject(request);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -85,20 +90,20 @@ namespace SchulIT.IccImport
                     {
                         var importResponse = new ImportResponse((int)response.StatusCode, responseContent);
                         JsonConvert.PopulateObject(responseContent, importResponse);
-                        logger.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed, {importResponse.IgnoredEntities.Count} entities ignored.");
+                        logger?.LogInformation($"Request ({url}) successful: {importResponse.AddedCount} entities added, {importResponse.UpdatedCount} entities updated, {importResponse.RemovedCount} entities removed, {importResponse.IgnoredEntities.Count} entities ignored.");
                         return importResponse;
                     }
                     else
                     {
                         var errorResponse = new ErrorResponse((int)response.StatusCode, responseContent);
                         JsonConvert.PopulateObject(responseContent, errorResponse);
-                        logger.LogError($"Request was not succesful: {errorResponse.Message}");
+                        logger?.LogError($"Request was not succesful: {errorResponse.Message}");
                         return errorResponse;
                     }
                 }
                 catch (Exception e)
                 {
-                    logger.LogError("Failed to parse response.");
+                    logger?.LogError("Failed to parse response.");
                     throw e;
                 }
             }
@@ -120,9 +125,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new AppointmentsData { Appointments = appointments }, AppointmentsUrl);
         }
 
-        public Task<IResponse> ImportExamsAsync(List<ExamData> exams)
+        public Task<IResponse> ImportExamsAsync(List<ExamData> exams, bool suppressNotifications = false)
         {
-            return ImportAsync(new ExamsData { Exams = exams }, ExamsUrl);
+            return ImportAsync(new ExamsData { Exams = exams, SuppressNotifications = suppressNotifications }, ExamsUrl);
         }
 
         public Task<IResponse> ImportGradesAsync(List<GradeData> grades)
@@ -160,9 +165,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new SubjectsData { Subjects = subjects }, SubjectsUrl);
         }
 
-        public Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions)
+        public Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions, bool suppressNotifications)
         {
-            return ImportAsync(new SubstitutionsData { Substitutions = substitutions }, SubstitutionsUrl);
+            return ImportAsync(new SubstitutionsData { Substitutions = substitutions, SuppressNotifications }, SubstitutionsUrl);
         }
 
         public Task<IResponse> ImportSupervisionsAsync(string period, List<TimetableSupervisionData> supervisions)

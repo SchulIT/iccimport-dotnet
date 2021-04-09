@@ -1,6 +1,7 @@
 namespace SchulIT.IccImport.Models
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     public class TimetableSupervisionData
     {
@@ -11,8 +12,8 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "week")]
-        public string Week { get; set; }
+        [JsonProperty(PropertyName = "weeks")]
+        public IList<int> Weeks { get; set; } = new List<int>();
 
         /// <summary>
         /// </summary>
