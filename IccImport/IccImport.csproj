@@ -9,9 +9,9 @@
     <Copyright>SchulIT</Copyright>
     <PackageProjectUrl>https://github.com/SchulIT/iccimport-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SchulIT/iccimport-dotnet</RepositoryUrl>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
-    <FileVersion>1.3.0.0</FileVersion>
-    <Version>1.3.0</Version>
+    <AssemblyVersion>1.3.0.1</AssemblyVersion>
+    <FileVersion>1.3.0.1</FileVersion>
+    <Version>1.3.0.1</Version>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageTags>icc import .net core</PackageTags>
     <Description>This library provides functionalities to upload entities to the ICC.</Description>
@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
