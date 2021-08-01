@@ -1,9 +1,9 @@
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+
 namespace SchulIT.IccImport.Models
 {
-    using Newtonsoft.Json;
-    using System.Collections.Generic;
-
-    internal class GradeTeachersData
+    internal class GradeMembershipsData
     {
         [JsonProperty(PropertyName = "section")]
         public int Section { get; set; }
@@ -13,7 +13,7 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "grade_teachers")]
-        public IList<GradeTeacherData> GradeTeachers { get; set; }
+        [JsonProperty(PropertyName = "memberships")]
+        public IList<GradeMembershipData> Memberships { get; set; }
     }
 }

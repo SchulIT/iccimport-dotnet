@@ -19,19 +19,21 @@ namespace SchulIT.IccImport
 
         Task<IResponse> ImportGradesAsync(List<GradeData> grades);
 
-        Task<IResponse> ImportGradeTeachersAsync(List<GradeTeacherData> gradeTeachers);
+        Task<IResponse> ImportGradeTeachersAsync(List<GradeTeacherData> gradeTeachers, int section, int year);
 
-        Task<IResponse> ImportStudentsAsync(List<StudentData> students);
+        Task<IResponse> ImportGradeMembershipsAsync(List<GradeMembershipData> memberships, int section, int year);
 
-        Task<IResponse> ImportStudyGroupsAsync(List<StudyGroupData> studyGroups);
+        Task<IResponse> ImportStudentsAsync(List<StudentData> students, int section, int year);
 
-        Task<IResponse> ImportStudyGroupMembershipsAsync(List<StudyGroupMembershipData> memberships);
+        Task<IResponse> ImportStudyGroupsAsync(List<StudyGroupData> studyGroups, int section, int year);
+
+        Task<IResponse> ImportStudyGroupMembershipsAsync(List<StudyGroupMembershipData> memberships, int section, int year);
 
         Task<IResponse> ImportSubjectsAsync(List<SubjectData> subjects);
 
         Task<IResponse> ImportSubstitutionsAsync(List<SubstitutionData> substitutions, bool suppressNotifications = false);
 
-        Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers);
+        Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers, int section, int year);
 
         Task<IResponse> ImportTimetableLessonsAsync(string period, List<TimetableLessonData> lessons);
 
@@ -39,7 +41,7 @@ namespace SchulIT.IccImport
 
         Task<IResponse> ImportSupervisionsAsync(string period, List<TimetableSupervisionData> supervisions);
 
-        Task<IResponse> ImportTuitionsAsync(List<TuitionData> tuitions);
+        Task<IResponse> ImportTuitionsAsync(List<TuitionData> tuitions, int section, int year);
 
         Task<IResponse> ImportInfotextsAsync(List<InfotextData> infotexts);
 

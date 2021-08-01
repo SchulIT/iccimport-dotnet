@@ -25,6 +25,7 @@ namespace SchulIT.IccImport
         public const string ExamsUrl = "exams";
         public const string GradesUrl = "grades";
         public const string GradeTeachersUrl = "grades/teachers";
+        public const string GradeMembershipsUrl = "grades/memberships";
         public const string StudentsUrl = "students";
         public const string StudyGroupsUrl = "studygroups";
         public const string StudyGroupMembershipsUrl = "studygroups/memberships";
@@ -135,9 +136,14 @@ namespace SchulIT.IccImport
             return ImportAsync(new GradesData { Grades = grades }, GradesUrl);
         }
 
-        public Task<IResponse> ImportGradeTeachersAsync(List<GradeTeacherData> gradeTeachers)
+        public Task<IResponse> ImportGradeTeachersAsync(List<GradeTeacherData> gradeTeachers, int section, int year)
         {
-            return ImportAsync(new GradeTeachersData { GradeTeachers = gradeTeachers }, GradeTeachersUrl);
+            return ImportAsync(new GradeTeachersData { Section = section, Year = year, GradeTeachers = gradeTeachers }, GradeTeachersUrl);
+        }
+
+        public Task<IResponse> ImportGradeMembershipsAsync(List<GradeMembershipData> memberships, int section, int year)
+        {
+            return ImportAsync(new GradeMembershipsData { Section = section, Year = year, Memberships = memberships }, GradeMembershipsUrl);
         }
 
         public Task<IResponse> ImportInfotextsAsync(List<InfotextData> infotexts)
@@ -145,19 +151,19 @@ namespace SchulIT.IccImport
             return ImportAsync(new InfotextsData { Infotexts = infotexts }, InfotextsUrl);
         }
 
-        public Task<IResponse> ImportStudentsAsync(List<StudentData> students)
+        public Task<IResponse> ImportStudentsAsync(List<StudentData> students, int section, int year)
         {
-            return ImportAsync(new StudentsData { Students = students }, StudentsUrl);
+            return ImportAsync(new StudentsData { Section = section, Year = year, Students = students }, StudentsUrl);
         }
 
-        public Task<IResponse> ImportStudyGroupMembershipsAsync(List<StudyGroupMembershipData> memberships)
+        public Task<IResponse> ImportStudyGroupMembershipsAsync(List<StudyGroupMembershipData> memberships, int section, int year)
         {
-            return ImportAsync(new StudyGroupMembershipsData { Memberships = memberships }, StudyGroupMembershipsUrl);
+            return ImportAsync(new StudyGroupMembershipsData { Section = section, Year = year, Memberships = memberships }, StudyGroupMembershipsUrl);
         }
 
-        public Task<IResponse> ImportStudyGroupsAsync(List<StudyGroupData> studyGroups)
+        public Task<IResponse> ImportStudyGroupsAsync(List<StudyGroupData> studyGroups, int section, int year)
         {
-            return ImportAsync(new StudyGroupsData { StudyGroups = studyGroups }, StudyGroupsUrl);
+            return ImportAsync(new StudyGroupsData { Section = section, Year = year, StudyGroups = studyGroups }, StudyGroupsUrl);
         }
 
         public Task<IResponse> ImportSubjectsAsync(List<SubjectData> subjects)
@@ -175,9 +181,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new TimetableSupervisionsData { Period = period, Supervisions = supervisions }, TimetableSupervisionsUrl);
         }
 
-        public Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers)
+        public Task<IResponse> ImportTeachersAsync(List<TeacherData> teachers, int section, int year)
         {
-            return ImportAsync(new TeachersData { Teachers = teachers }, TeachersUrl);
+            return ImportAsync(new TeachersData { Section = section, Year = year, Teachers = teachers }, TeachersUrl);
         }
 
         public Task<IResponse> ImportTimetableLessonsAsync(string period, List<TimetableLessonData> lessons)
@@ -190,9 +196,9 @@ namespace SchulIT.IccImport
             return ImportAsync(new TimetablePeriodsData { Periods = periods }, TimetablePeriodsUrl);
         }
 
-        public Task<IResponse> ImportTuitionsAsync(List<TuitionData> tuitions)
+        public Task<IResponse> ImportTuitionsAsync(List<TuitionData> tuitions, int section, int year)
         {
-            return ImportAsync(new TuitionsData { Tuitions = tuitions }, TuitionsUrl);
+            return ImportAsync(new TuitionsData { Section = section, Year = year, Tuitions = tuitions }, TuitionsUrl);
         }
 
         public Task<IResponse> ImportPrivacyCategoriesAsync(List<PrivacyCategoryData> categories)
@@ -209,5 +215,7 @@ namespace SchulIT.IccImport
         {
             return ImportAsync(new FreeLessonTimespansData { FreeLessons = timespans }, FreeLessonTimespanUrl);
         }
+
+      
     }
 }

@@ -28,13 +28,8 @@ namespace SchulIT.IccImport.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "teacher")]
-        public string Teacher { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "additional_teachers")]
-        public IList<string> AdditionalTeachers { get; set; } = new List<string>();
+        [JsonProperty(PropertyName = "teachers")]
+        public IList<string> Teachers { get; set; }
 
         /// <summary>
         /// </summary>
