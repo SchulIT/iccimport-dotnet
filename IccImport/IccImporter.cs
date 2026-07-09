@@ -41,6 +41,8 @@ namespace SchulIT.IccImport
         public const string PrivacyCategoryUrl = "privacy/categories";
         public const string RoomUrl = "rooms";
         public const string FreeLessonTimespanUrl = "free_lessons";
+        public const string LearningManagementSystemsUrl = "lms";
+        public const string LearningManagementSystemStudentsUrl = "lms/students";
 
         private readonly ILogger<IccImporter> logger;
 
@@ -216,6 +218,14 @@ namespace SchulIT.IccImport
             return ImportAsync(new FreeLessonTimespansData { FreeLessons = timespans }, FreeLessonTimespanUrl);
         }
 
-      
+        public Task<IResponse> ImportLearningManagementSystemsAsync(List<LearningManagementSystemData> lms)
+        {
+            return ImportAsync(new LearningManagementSystemsData { LMS = lms }, LearningManagementSystemsUrl);
+        }
+
+        public Task<IResponse> ImportLearningManagementSystemStudentsAsync(List<StudentLearningManagementSystemData> consents)
+        {
+            return ImportAsync(new StudentLearningManagementSystemsData { Consents = consents }, LearningManagementSystemStudentsUrl);
+        }
     }
 }

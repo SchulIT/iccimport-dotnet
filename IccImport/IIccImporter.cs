@@ -52,5 +52,9 @@ namespace SchulIT.IccImport
         Task<IResponse> ImportRoomsAsync(List<RoomData> rooms);
 
         Task<IResponse> ImportFreeLessonTimespansAsync(List<FreeLessonTimespanData> timespans);
+
+        Task<IResponse> ImportLearningManagementSystemsAsync(List<LearningManagementSystemData> lms);
+
+        Task<IResponse> ImportLearningManagementSystemStudentsAsync(List<StudentLearningManagementSystemData> consents);
     }
 }
