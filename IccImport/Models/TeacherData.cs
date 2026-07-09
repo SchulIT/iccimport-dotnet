@@ -1,6 +1,7 @@
 namespace SchulIT.IccImport.Models
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
 
     public class TeacherData
@@ -40,6 +41,11 @@ namespace SchulIT.IccImport.Models
         /// </summary>
         [JsonProperty(PropertyName = "gender")]
         public string Gender { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "birthday")]
+        public DateTime? Birthday { get; set; }
 
         /// <summary>
         /// Gets or sets the list of external IDs of subjects which the
